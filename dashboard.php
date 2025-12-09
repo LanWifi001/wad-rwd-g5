@@ -93,122 +93,12 @@ foreach ($topics as $tname => $terms) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>QuizMania Topics</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background-image: url("study.jpg");
-            /* Optional: Further styling for the background image */
-            background-repeat: no-repeat;
-            /* Prevents the image from repeating */
-            background-position: center;
-            /* Centers the image */
-            background-size: cover;
-            /* Scales the image to cover the entire element */
-            background-attachment: fixed;
-            /* Keeps the image fixed while scrolling */
-        }
-
-        aside {
-            width: 250px;
-            background: #fff;
-            height: 100vh;
-            /* position: fixed; */
-            padding: 25px;
-            box-shadow: 2px 0 15px rgba(0, 0, 0, .05);
-        }
-
-        aside h2 {
-            font-weight: 700;
-            margin-bottom: 25px;
-            color: #007bff;
-        }
-
-        aside ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        aside li a {
-            text-decoration: none;
-            display: block;
-            padding: 12px;
-            border-radius: 10px;
-            color: #555;
-            font-weight: 500;
-            transition: .2s;
-        }
-
-        aside li a.active,
-        aside li a:hover {
-            background: #007bff;
-            color: #fff;
-        }
-
-        main {
-            display: grid;
-            grid-template-columns: 1fr 4fr;
-        }
-        section {
-            background-color: #f0f2f7;
-        }
-
-        .sidebar {
-            width: 250px;
-        }
-
-        .sidebar a {
-            text-decoration: none;
-            display: block;
-            padding: 12px;
-            border-radius: 8px;
-            color: #555;
-            font-weight: 500;
-        }
-
-        .sidebar a.active,
-        .sidebar a:hover {
-            background: #007bff;
-            color: #fff;
-        }
-
-        .subject-item,
-        .card-hover {
-            transition: 0.2s;
-        }
-
-        .subject-item:hover,
-        .card-hover:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .term-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 8px;
-        }
-
-        .term-row input {
-            flex: 1;
-            padding: 5px;
-        }
-
-        .term-row button {
-            flex: none;
-        }
-
-        @media (max-width: 769px) {
-            main {
-                display: block;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="container">
+<body>
     <header class="navbar bg-primary text-white p-4">
-        <h2>QuizMania</h2><button class="btn btn-primary d-md-none" type="button" data-bs-toggle="offcanvas"
+        <h1>QuizMania</h1><button class="btn btn-primary d-md-none" type="button" data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive">☰</button>
     </header>
 
@@ -223,10 +113,8 @@ foreach ($topics as $tname => $terms) {
             <ul>
                 <li><a href="dashboard.php" class="active">Dashboard</a></li>
                 <li><a href="topics.php">Topics</a></li>
+                <li><a href="settings.php">Settings</a></li>
             </ul>
-            <form method="post" action="logout.php" class="logout-bottom mt-4">
-                <button type="submit" class="btn btn-danger w-100">Logout</button>
-            </form>
         </aside>
     </div>
 
@@ -235,13 +123,11 @@ foreach ($topics as $tname => $terms) {
             <ul>
                 <li><a href="dashboard.php" class="active">Dashboard</a></li>
                 <li><a href="topics.php">Topics</a></li>
+                <li><a href="settings.php">Settings</a></li>
             </ul>
-            <form method="post" action="logout.php" class="logout-bottom mt-4">
-                <button type="submit" class="btn btn-danger w-100">Logout</button>
-            </form>
         </aside>
 
-        <section class="col d-block p-4">
+        <section class="d-block p-4 g-2 row">
             <div class="header-top mb-4">
                 <div>
                     <h1>Welcome back <strong><?= htmlspecialchars($user['name']) ?></strong>! 👋</h1>
@@ -250,23 +136,23 @@ foreach ($topics as $tname => $terms) {
             </div>
 
             <!-- Stats Cards -->
-            <div class="row g-3 mb-4">
-                <div class="col-6 col-md-3">
+            <div class="stats">
+                <div class="stat-box">
                     <div class="card p-3 card-hover text-center">
                         <h6>Total Terms</h6><strong><?= $total_terms ?></strong>
                     </div>
                 </div>
-                <div class="col-6 col-md-3">
+                <div class="stat-box">
                     <div class="card p-3 card-hover text-center">
                         <h6>Subjects</h6><strong><?= count($subjects) ?></strong>
                     </div>
                 </div>
-                <div class="col-6 col-md-3">
+                <div class="stat-box">
                     <div class="card p-3 card-hover text-center">
                         <h6>Study Streak</h6><strong>5 days 🔥</strong>
                     </div>
                 </div>
-                <div class="col-6 col-md-3">
+                <div class="stat-box">
                     <div class="card p-3 card-hover text-center">
                         <h6>Progress</h6>
                         <div class="progress mt-2">
@@ -280,15 +166,19 @@ foreach ($topics as $tname => $terms) {
                 Create New Topic
             </button>
 
-            <div class="collapse mb-4" id="newTopicForm">
-                <form method="post">
-                    <input type="hidden" name="action" value="add_term">
-                    <div class="term-row">
-                        <input type="text" name="topic_name" placeholder="Topic Name" required>
-                        <input type="text" name="term" placeholder="Term" required>
-                        <input type="text" name="definition" placeholder="Definition">
-                        <button type="submit" class="btn btn-success">Create Topic</button>
+            <div class="collapse mb-4 card p-2" id="newTopicForm">
+                <form method="post" class="g-2 row">
+                    <div class="topic-form col-12">
+                        <input class="d-none" type="hidden" name="action" value="add_term">
+                        <h2><input type="text" name="topic_name" placeholder="Topic Name" class="new-topic-name"
+                                required>
+                        </h2>
+                        <div class="term-def">
+                            <input type="text" name="term" placeholder="Term" required>
+                            <input type="text" name="definition" placeholder="Definition" required>
+                        </div>
                     </div>
+                    <button type="submit" class="btn btn-success w-100 col-12">Create Topic</button>
                 </form>
             </div>
 
@@ -364,7 +254,7 @@ foreach ($topics as $tname => $terms) {
 
                                         <div class="term-row">
                                             <input type="text" name="term" placeholder="New term" required>
-                                            <input type="text" name="definition" placeholder="Definition">
+                                            <input type="text" name="definition" placeholder="Definition" required>
                                             <button type="submit" class="btn btn-success btn-sm">Add</button>
                                         </div>
                                     </form>
