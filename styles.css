@@ -58,14 +58,17 @@ main {
     grid-template-columns: 1fr 4fr;
     margin: 0;
     gap: 0;
+    width: 100%;
 }
 
-main .dashboard {
+/* main .dashboard , main .settings {
     height: 100vh;
-}
+} */
 
 section {
     background-color: #f0f2f7;
+    width: 100%;
+    marker-end: 0;
 }
 
 .sidebar {
@@ -190,11 +193,19 @@ section {
 
 .stat-box .card {
     height: 120px;
+    cursor: pointer;
 }
 
 /* .quiz {
     height: 50px;
 } */
+
+.collapse .card-body {
+    display: grid;
+    grid-template-rows: 20px 2fr;
+    width: 100%;
+    justify-self: center;
+}
 
 @media (max-width: 769px) {
     main {

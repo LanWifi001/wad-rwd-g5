@@ -91,7 +91,7 @@ foreach ($topics as $tname => $terms) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>QuizMania Topics</title>
+    <title>QuizMania Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -127,7 +127,7 @@ foreach ($topics as $tname => $terms) {
             </ul>
         </aside>
 
-        <section class="d-block p-4 g-2 row">
+        <section class="col d-block p-4">
             <div class="header-top mb-4">
                 <div>
                     <h1>Welcome back <strong><?= htmlspecialchars($user['name']) ?></strong>! 👋</h1>
@@ -138,31 +138,44 @@ foreach ($topics as $tname => $terms) {
             <!-- Stats Cards -->
             <div class="stats">
                 <div class="stat-box">
-                    <div class="card p-3 card-hover text-center">
-                        <h6>Total Terms</h6><strong><?= $total_terms ?></strong>
-                    </div>
-                </div>
-                <div class="stat-box">
-                    <div class="card p-3 card-hover text-center">
-                        <h6>Subjects</h6><strong><?= count($subjects) ?></strong>
-                    </div>
-                </div>
-                <div class="stat-box">
-                    <div class="card p-3 card-hover text-center">
-                        <h6>Study Streak</h6><strong>5 days 🔥</strong>
-                    </div>
-                </div>
-                <div class="stat-box">
-                    <div class="card p-3 card-hover text-center">
-                        <h6>Progress</h6>
-                        <div class="progress mt-2">
-                            <div class="progress-bar" style="width:72%"></div>
+                    <a href="topics.php" class="text-decoration-none">
+                        <div class="card p-3 card-hover text-center">
+                            <h4>Total Terms</h4>
+                            <h5><strong><?= $total_terms ?></strong></h5>
                         </div>
-                    </div>
+                    </a>
+                </div>
+                <div class="stat-box">
+                    <a href="topics.php" class="text-decoration-none">
+                        <div class="card p-3 card-hover text-center">
+                            <h4>Subjects</h4>
+                            <h5><strong><?= count($subjects) ?></strong></h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="stat-box">
+                    <a href="topics.php" class="text-decoration-none">
+                        <div class="card p-3 card-hover text-center">
+                            <h4>Take a quiz?</h4>
+                            <h5>
+                                <strong>📝</strong>
+                            </h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="stat-box">
+                    <a href="topics.php" class="text-decoration-none">
+                        <div class="card p-3 card-hover text-center">
+                            <h4>Create a new Topic?</h4>
+                            <h5>
+                                <strong>🤔</strong>
+                            </h5>
+                        </div>
+                    </a>
                 </div>
             </div>
 
-            <button class="btn btn-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#newTopicForm">
+            <!-- <button class="btn btn-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#newTopicForm">
                 Create New Topic
             </button>
 
@@ -180,7 +193,7 @@ foreach ($topics as $tname => $terms) {
                     </div>
                     <button type="submit" class="btn btn-success w-100 col-12">Create Topic</button>
                 </form>
-            </div>
+            </div> -->
 
             <h2>Your Topics</h2>
 

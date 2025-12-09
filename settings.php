@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>QuizMania Topics</title>
+    <title>QuizMania Settings</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </aside>
     </div>
 
-    <main class="dashboard">
+    <main>
         <aside class="navbar d-none d-md-block p-4">
             <ul>
                 <li><a href="dashboard.php">Dashboard</a></li>
@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </ul>
         </aside>
 
-        <section class="d-block p-4 g-2 row">
+        <section class="col d-block p-4">
             <div class="header-top mb-4">
                 <div>
                     <h1>Settings ⚙️</h1>
@@ -92,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-bs-parent="#accordion">
                         <div class="card-body">
-                            <p>Are you sure you want to log out?</p>
+                            <div><p>Are you sure you want to log out?</p></div>
                             <form method="post" action="logout.php" class="logout-bottom mt-4">
                                 <button type="submit" class="btn btn-danger w-50">Logout</button>
                             </form>
@@ -109,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion">
                         <div class="card-body">
-                            <p>Are you sure you want to delete your account?</p>
+                            <div><p>Are you sure you want to delete your account?</p></div>
                             <form method="post" class="logout-bottom mt-4 justify-self-start">
                                 <input type="hidden" name="action" value="delete_acc">
                                 <button type="submit" class="btn btn-danger w-50">Delete Account</button>
