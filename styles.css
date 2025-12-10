@@ -11,6 +11,23 @@ body {
     padding: 0;
 }
 
+header {
+    background-image: url("study.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+footer {
+    background-image: url("study.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    font-size: large;
+}
+
 aside {
     background: #fff;
     height: 100%;
@@ -49,8 +66,13 @@ aside li a:hover {
 header {
     width: 100%;
 }
-header h1 {
+
+header .container-fluid {
     margin-left: 2rem;
+}
+
+a img {
+    border-radius: 50px;
 }
 
 main {
@@ -61,8 +83,8 @@ main {
     width: 100%;
 }
 
-/* main .dashboard , main .settings {
-    height: 100vh;
+/* main .settings {
+    height: 100%;
 } */
 
 section {
@@ -177,7 +199,7 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 1.4rem;
+    gap: 1rem;
 }
 
 .term-row button {
@@ -196,6 +218,11 @@ section {
     cursor: pointer;
 }
 
+.sign-up-container form button,
+.sign-in-container form button {
+    cursor: pointer;
+}
+
 /* .quiz {
     height: 50px;
 } */
@@ -207,8 +234,22 @@ section {
     justify-self: center;
 }
 
+#topic-form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
 @media (max-width: 769px) {
     main {
         display: block;
+    }
+
+    .navbar {
+        display: grid;
+        grid-template-columns: 4rem 1rem;
+    }
+
+    .container-fluid a {
+        scale: 1;
     }
 }

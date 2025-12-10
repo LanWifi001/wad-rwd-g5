@@ -369,3 +369,9 @@ footer a {
         padding: 10px 30px;
     }
 }
+
+@media (min-width: 768px) {
+    .form-container form p {
+        display: none;
+    }
+}

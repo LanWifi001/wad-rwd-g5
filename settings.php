@@ -39,11 +39,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>QuizMania Settings</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            height: 100vh;
+        }
+
+        main {
+            height: 100%;
+        }
+    </style>
 </head>
 
 <body>
     <header class="navbar bg-primary text-white p-4">
-        <h1>QuizMania</h1><button class="btn btn-primary d-md-none" type="button" data-bs-toggle="offcanvas"
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" style="scale: 1.6;" href="dashboard.php">
+                <img src="mania.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                <strong>QuizMania</strong>
+            </a>
+        </div>
+        <button class="btn text-white d-md-none" style="scale: 1.6;" type="button" data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive">☰</button>
     </header>
 
@@ -92,7 +107,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-bs-parent="#accordion">
                         <div class="card-body">
-                            <div><p>Are you sure you want to log out?</p></div>
+                            <div>
+                                <p>Are you sure you want to log out?</p>
+                            </div>
                             <form method="post" action="logout.php" class="logout-bottom mt-4">
                                 <button type="submit" class="btn btn-danger w-50">Logout</button>
                             </form>
@@ -109,7 +126,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion">
                         <div class="card-body">
-                            <div><p>Are you sure you want to delete your account?</p></div>
+                            <div>
+                                <p>Are you sure you want to delete your account?</p>
+                            </div>
                             <form method="post" class="logout-bottom mt-4 justify-self-start">
                                 <input type="hidden" name="action" value="delete_acc">
                                 <button type="submit" class="btn btn-danger w-50">Delete Account</button>

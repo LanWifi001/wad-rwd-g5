@@ -1,7 +1,8 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+session_start();
+
+// Destroy all session data
+session_destroy();
 session_start();
 require_once __DIR__ . "/db.php";
 
@@ -20,7 +21,6 @@ if (isset($_POST['register'])) {
   } else {
     $db = get_db();
 
-    // Check if email exists
     $stmt = $db->prepare("SELECT id FROM users WHERE email = ?");
     $stmt->bindValue(1, $email, SQLITE3_TEXT);
     $result = $stmt->execute();
@@ -28,7 +28,6 @@ if (isset($_POST['register'])) {
     if ($result->fetchArray()) {
       $register_error = "Email already registered.";
     } else {
-      // Insert new user
       $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
       $stmt = $db->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
       $stmt->bindValue(1, $name, SQLITE3_TEXT);
@@ -77,8 +76,8 @@ if (isset($_POST['login'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>QuizMania - Login/Register</title>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
   <link href="assets/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <style>
     .alert-danger {
       color: red;
@@ -86,6 +85,27 @@ if (isset($_POST['login'])) {
 
     .alert-success {
       color: green;
+    }
+
+    /* Mobile-only links inside forms */
+    .form-container form p {
+      display: block;
+      /* visible by default */
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    @media (min-width: 768px) {
+      .form-container form p {
+        display: none;
+        /* hide on md+ */
+      }
+    }
+
+    .form-container form p a {
+      cursor: pointer;
+      color: #007bff;
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -114,6 +134,9 @@ if (isset($_POST['login'])) {
         <input type="email" placeholder="Email" name="email" required />
         <input type="password" placeholder="Password" name="password" required />
         <button name="register">Sign Up</button>
+
+        <!-- Mobile-only Sign In link -->
+        <p>Have an account? <a id="signIn2">Sign In</a></p>
       </form>
     </div>
 
@@ -131,6 +154,9 @@ if (isset($_POST['login'])) {
         <input type="email" placeholder="Email" name="email" required />
         <input type="password" placeholder="Password" name="password" required />
         <button name="login">Sign In</button>
+
+        <!-- Mobile-only Sign Up link -->
+        <p>Don't have an account? <a id="signUp2">Sign Up</a></p>
       </form>
     </div>
 
@@ -154,6 +180,19 @@ if (isset($_POST['login'])) {
 
   <script src="assets/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
+  <script>
+    container = document.getElementById('container')
+    // Trigger overlay on mobile links
+    document.getElementById("signIn2").addEventListener("click", function (e) {
+      e.preventDefault();
+      container.style.translate
+    });
+
+    document.getElementById("signUp2").addEventListener("click", function (e) {
+      e.preventDefault();
+      document.getElementById("signUp").click();
+    });
+  </script>
 </body>
 
 </html>

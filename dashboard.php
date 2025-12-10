@@ -98,7 +98,13 @@ foreach ($topics as $tname => $terms) {
 
 <body>
     <header class="navbar bg-primary text-white p-4">
-        <h1>QuizMania</h1><button class="btn btn-primary d-md-none" type="button" data-bs-toggle="offcanvas"
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" style="scale: 1.6;" href="dashboard.php">
+                <img src="mania.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                <strong>QuizMania</strong>
+            </a>
+        </div>
+        <button class="btn text-white d-md-none" style="scale: 1.6;" type="button" data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive">☰</button>
     </header>
 
@@ -283,7 +289,10 @@ foreach ($topics as $tname => $terms) {
 
         </section>
     </main>
-    <footer class="bg bg-primary text-white text-center p-4">2025 All Rights Reserved</footer>
+    <footer class="bg bg-primary text-white text-center p-4">
+
+        <div class="bottom-footer">2025 All Rights Reserved</div>
+    </footer>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 

@@ -164,7 +164,13 @@ foreach ($topics as $tname => $terms) {
 
 <body>
     <header class="navbar bg-primary text-white p-4">
-        <h1>QuizMania</h1><button class="btn btn-primary d-md-none" type="button" data-bs-toggle="offcanvas"
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" style="scale: 1.6;" href="dashboard.php">
+                <img src="mania.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                <strong>QuizMania</strong>
+            </a>
+        </div>
+        <button class="btn text-white d-md-none" style="scale: 1.6;" type="button" data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive">☰</button>
     </header>
 
@@ -209,12 +215,13 @@ foreach ($topics as $tname => $terms) {
                 <form method="post" class="g-2 row">
                     <div class="topic-form col-12">
                         <input class="d-none" type="hidden" name="action" value="add_term">
-                        <h2><input type="text" name="topic_name" placeholder="Topic Name" class="new-topic-name"
-                                required>
+                        <h2><input class="form-control form-control-lg" type="text" name="topic_name"
+                                placeholder="Topic Name" class="new-topic-name" required>
                         </h2>
                         <div class="term-def">
-                            <input type="text" name="term" placeholder="Term" required>
-                            <input type="text" name="definition" placeholder="Definition" required>
+                            <input class="form-control" type="text" name="term" placeholder="Term" required>
+                            <input class="form-control form-control-sm" type="text" name="definition"
+                                placeholder="Definition" required>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-success w-100 col-12">Create Topic</button>
@@ -246,7 +253,7 @@ foreach ($topics as $tname => $terms) {
                                     aria-labelledby="heading_<?= md5($tname) ?>" data-bs-parent="#topicsAccordion">
                                     <div class="accordion-body">
                                         <?php foreach ($terms as $t): ?>
-                                            <div class="subject-item mb-2">
+                                            <div class="subject-item mb-2" id="topic-form">
                                                 <div><?= htmlspecialchars($t['term']) ?> : <?= htmlspecialchars($t['definition']) ?>
                                                 </div>
                                                 <div>
@@ -267,7 +274,7 @@ foreach ($topics as $tname => $terms) {
                                                 </div>
                                             </div>
                                         <?php endforeach; ?>
-                                        <form method="post" class="mt-2">
+                                        <form method="post" class="mt-2" action="topics.php#direct-topic">
                                             <input type="hidden" name="action" value="add_term">
                                             <input type="hidden" name="topic_name" value="<?= htmlspecialchars($tname) ?>">
                                             <div class="term-row">
@@ -276,6 +283,7 @@ foreach ($topics as $tname => $terms) {
                                                 <button type="submit" class="btn btn-sm btn-success">Add Term</button>
                                             </div>
                                         </form>
+                                        <div id="direct-topic"></div>
                                     </div>
                                 </div>
                             </div>
@@ -291,13 +299,13 @@ foreach ($topics as $tname => $terms) {
                 <?php endif; ?>
                 <?php if (!empty($subjects)): ?>
 
-                    <form method="post">
+                    <form method="post" action="topics.php#direct-quiz">
                         <input type="hidden" name="action" value="start_quiz">
                         <div class="form-check row g-3">
                             <div class="container-fluid">
                                 <div class="row g-2">
                                     <?php foreach ($subjects as $subject): ?>
-                                        <div class="col-4 quiz">
+                                        <div class="col-md-6 col-sm-4 quiz">
                                             <!-- Card as label -->
                                             <label class="card h-100 card-hover" style="cursor:pointer;">
                                                 <img src="quiz.jpg" class="card-img-top col" alt="...">
@@ -327,10 +335,10 @@ foreach ($topics as $tname => $terms) {
                         <div class="mb-4 p-3 bg-white rounded shadow">
                             <h4>Quiz: <?= htmlspecialchars($q['topic_name']) ?></h4>
                             <p><strong>Term:</strong> <?= htmlspecialchars($q['term']) ?></p>
-                            <form method="post">
+                            <form method="post" action="topics.php#direct-quiz">
                                 <input type="hidden" name="action" value="answer_quiz">
                                 <input type="text" name="answer" placeholder="Your answer" required class="form-control mb-2">
-                                <button type="submit" class="btn btn-primary">Submit Answer</button>
+                                <button type="submit" class="btn btn-primary answer-btn">Submit Answer</button>
                             </form>
                             <p>Question <?= $_SESSION['quiz']['current'] + 1 ?> of <?= count($_SESSION['quiz']['questions']) ?>
                             </p>
@@ -343,6 +351,7 @@ foreach ($topics as $tname => $terms) {
                         </div>
                     <?php endif; ?>
                 <?php endif; ?>
+                <div id="direct-quiz"></div>
 
         </section>
     </main>
