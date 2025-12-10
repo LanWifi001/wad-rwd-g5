@@ -76,7 +76,7 @@ if (isset($_POST['login'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>QuizMania - Login/Register</title>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800" rel="stylesheet">
-  <link href="assets/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
     .alert-danger {
@@ -178,7 +178,7 @@ if (isset($_POST['login'])) {
 
   </div>
 
-  <script src="assets/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
   <script>
     container = document.getElementById('container')
