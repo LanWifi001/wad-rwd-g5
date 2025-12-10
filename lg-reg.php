@@ -134,9 +134,6 @@ if (isset($_POST['login'])) {
         <input type="email" placeholder="Email" name="email" required />
         <input type="password" placeholder="Password" name="password" required />
         <button name="register">Sign Up</button>
-
-        <!-- Mobile-only Sign In link -->
-        <p>Have an account? <a id="signIn2">Sign In</a></p>
       </form>
     </div>
 
@@ -154,9 +151,6 @@ if (isset($_POST['login'])) {
         <input type="email" placeholder="Email" name="email" required />
         <input type="password" placeholder="Password" name="password" required />
         <button name="login">Sign In</button>
-
-        <!-- Mobile-only Sign Up link -->
-        <p>Don't have an account? <a id="signUp2">Sign Up</a></p>
       </form>
     </div>
 
@@ -180,19 +174,8 @@ if (isset($_POST['login'])) {
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
-  <script>
-    container = document.getElementById('container')
-    // Trigger overlay on mobile links
-    document.getElementById("signIn2").addEventListener("click", function (e) {
-      e.preventDefault();
-      container.style.translate
-    });
+  <script src="DarkMode.js"></script>
 
-    document.getElementById("signUp2").addEventListener("click", function (e) {
-      e.preventDefault();
-      document.getElementById("signUp").click();
-    });
-  </script>
 </body>
 
 </html>

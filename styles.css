@@ -1,4 +1,56 @@
+html,
 body {
+    height: 100vh;
+    margin: 0;
+}
+
+/* =========================================
+   LIGHT MODE (DEFAULT)
+   ========================================= */
+:root {
+    --bg-body: #f0f2f7;
+    --bg-card: #ffffff;
+    --bg-sidebar: #ffffff;
+    --bg-header: #007bff;
+    --bg-footer: #007bff;
+
+    --text-main: #222;
+    --text-muted: #555;
+    --text-light: #ffffff;
+
+    --accent: #007bff;
+    --accent-hover: #0063cc;
+
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+
+/* =========================================
+   DARK MODE
+   ========================================= */
+.dark {
+    --bg-body: #1b1d22;
+    --bg-card: #2a2c31;
+    --bg-sidebar: #24262b;
+    --bg-header: #111317;
+    --bg-footer: #111317;
+
+    --text-main: #e2e2e2;
+    --text-muted: #b5b5b5;
+    --text-light: #ffffff;
+
+    --accent: #3b82f6;
+    --accent-hover: #2563eb;
+
+    --shadow: rgba(255, 255, 255, 0.08);
+}
+
+body {
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     font-family: 'Segoe UI', sans-serif;
     background-image: url("study.jpg");
     background-repeat: no-repeat;
@@ -6,40 +58,35 @@ body {
     background-size: cover;
     background-attachment: fixed;
     width: 100%;
-    height: 100vh;
+    min-height: 100%;
     margin: 0;
     padding: 0;
 }
 
 header {
-    background-image: url("study.jpg");
+    background: var(--bg-header);
+    /* background-image: url("study.jpg"); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
 }
 
 footer {
-    background-image: url("study.jpg");
+    background: var(--bg-footer);
+    /* background-image: url("study.jpg"); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     font-size: large;
-}
-
-aside {
-    background: #fff;
-    height: 100%;
-    /* position: fixed; */
-    padding: 25px;
-    box-shadow: 2px 0 15px rgba(0, 0, 0, .05);
+    height: 100px;
 }
 
 aside h2 {
     font-weight: 700;
     margin-bottom: 25px;
-    color: #007bff;
+    color: var(--accent);
 }
 
 aside ul {
@@ -52,18 +99,19 @@ aside li a {
     display: block;
     padding: 12px;
     border-radius: 10px;
-    color: #555;
+    color: var(--text-muted);
     font-weight: 500;
     transition: .2s;
 }
 
 aside li a.active,
 aside li a:hover {
-    background: #007bff;
-    color: #fff;
+    background: var(--accent);
+    color: var(--text-light);
 }
 
 header {
+    height: 100px;
     width: 100%;
 }
 
@@ -77,10 +125,18 @@ a img {
 
 main {
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 280px 1fr;
+    /* sidebar | main */
+    transition: grid-template-columns 0.3s ease;
     margin: 0;
     gap: 0;
     width: 100%;
+    height: 1000px;
+    flex: 1;
+}
+
+.main-collapsed {
+    grid-template-columns: 80px 1fr;
 }
 
 /* main .settings {
@@ -88,8 +144,9 @@ main {
 } */
 
 section {
-    background-color: #f0f2f7;
+    background-color: var(--bg-body);
     width: 100%;
+    height: fit-content;
     marker-end: 0;
 }
 
@@ -102,14 +159,14 @@ section {
     display: block;
     padding: 12px;
     border-radius: 8px;
-    color: #555;
+    color: var(--text-muted);
     font-weight: 500;
 }
 
 .sidebar a.active,
 .sidebar a:hover {
-    background: #007bff;
-    color: #fff;
+    background: var(--accent);
+    color: var(--text-light);
 }
 
 .subject-item,
@@ -120,7 +177,7 @@ section {
 .subject-item:hover,
 .card-hover:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 15px var(--shadow);
 }
 
 .term-row {
@@ -150,31 +207,31 @@ section {
 
 .card-hover:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 15px var(--shadow);
 }
 
 /* Active state when checkbox is checked */
 .quiz-card input[type="checkbox"]:checked+img,
 .quiz-card input[type="checkbox"]:checked~.card-body {
-    border: 2px solid #007bff;
+    border: 2px solid var(--accent);
     background-color: rgba(0, 123, 255, 0.1);
 }
 
 .subject-item {
-    background: #fff;
+    background: var(--bg-card);
     padding: 16px;
     border-radius: 10px;
     margin-bottom: 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, .05);
+    box-shadow: 0 3px 6px var(--shadow);
     transition: .2s;
 }
 
 .subject-item:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+    box-shadow: 0 8px 15px var(--shadow);
 }
 
 .term-row {
@@ -229,7 +286,8 @@ section {
 
 .collapse .card-body {
     display: grid;
-    grid-template-rows: 20px 2fr;
+    grid-template-rows: 20px 4fr;
+    justify-content: center;
     width: 100%;
     justify-self: center;
 }
@@ -237,6 +295,46 @@ section {
 #topic-form {
     display: grid;
     grid-template-columns: 1fr 2fr;
+}
+
+#navbar {
+    transition: transform 0.3s ease;
+}
+
+#sidebar {
+    background: var(--bg-sidebar);
+    box-shadow: 2px 0 15px var(--shadow);
+    height: 100%;
+    /* position: fixed; */
+    padding: 25px;
+    width: 280px;
+    transition: width 0.3s ease;
+    overflow: hidden;
+}
+
+.navbar-collapsed {
+    display: none;
+}
+
+.toggle-collapsed {
+    display: inline-block;
+}
+
+#sidebar.toggle {
+    transform: translateX(-250px);
+}
+
+#sidebar.toggle-aside {
+    width: 80px;
+}
+
+.toggle-main {
+    display: grid;
+    grid-template-columns: 2px 1fr;
+}
+
+#main {
+    width: 100%;
 }
 
 @media (max-width: 769px) {
@@ -256,4 +354,80 @@ section {
     .card-topic {
         font-size: small;
     }
+
+    #sidebar {
+        width: 0;
+        overflow: hidden;
+        transition: width 0.3s ease;
+    }
+
+    #sidebar.toggle-aside {
+        width: 250px;
+    }
+}
+
+/* =========================================
+   BOOTSTRAP OVERRIDES
+   ========================================= */
+.btn-primary,
+.bg-primary,
+.text-primary {
+    background-color: var(--accent) !important;
+    border-color: var(--accent) !important;
+    color: var(--text-light) !important;
+}
+
+.btn-primary:hover,
+.bg-primary:hover {
+    background-color: var(--accent-hover) !important;
+    border-color: var(--accent-hover) !important;
+}
+
+.card {
+    background: var(--bg-card) !important;
+    color: var(--text-main) !important;
+}
+
+/* Dark Mode Button */
+#li-dark button {
+    border-radius: 50px;
+    width: 50px;
+    height: 30px;
+}
+
+#li-dark button p {
+    transition: transform 0.2s ease;
+    transform: translate(-10px, -2px);
+}
+
+.btn-white {
+    color: var(--text-main);
+}
+
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+.offcanvas-body {
+    background: var(--bg-card);
+}
+
+.accordion-button {
+    background: var(--bg-card);
+    color: var(--text-main);
+}
+
+.collapse .card-body div {
+    color: var(--text-muted);
+    justify-self: center;
+}
+
+.collapse .card-body .logout-bottom {
+    display: flex;
+    justify-content: center;
+    width: 300px;
+}
+
+.collapse .card-body .logout-bottom {
+    justify-self: center;
 }

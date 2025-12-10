@@ -7,7 +7,7 @@ function get_db(): SQLite3 {
     }
     $dbPath = __DIR__ . '/db.db';
     $db = new SQLite3($dbPath);
-    $db->enableExceptions(true);
+    $db->enableExceptions(false);
 
     // Create users table if it does not exist
     $db->exec('CREATE TABLE IF NOT EXISTS users (

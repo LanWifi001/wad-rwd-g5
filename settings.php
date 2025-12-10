@@ -39,28 +39,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>QuizMania Settings</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            height: 100vh;
-        }
-
-        main {
-            height: 100%;
-        }
-    </style>
 </head>
 
 <body>
-    <header class="navbar bg-primary text-white p-4">
-        <div class="container-fluid">
-            <a class="navbar-brand text-white" style="scale: 1.6;" href="dashboard.php">
-                <img src="mania.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-                <strong>QuizMania</strong>
-            </a>
-        </div>
-        <button class="btn text-white d-md-none" style="scale: 1.6;" type="button" data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive">☰</button>
-    </header>
 
     <div class="offcanvas-md offcanvas-start" tabindex="-1" id="offcanvasResponsive"
         aria-labelledby="offcanvasResponsiveLabel">
@@ -73,75 +54,122 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <ul>
                 <li><a href="dashboard.php">Dashboard</a></li>
                 <li><a href="topics.php">Topics</a></li>
+                <li><a href="quiz.php">Quiz</a></li>
                 <li><a href="settings.php" class="active">Settings</a></li>
             </ul>
         </aside>
     </div>
 
-    <main>
-        <aside class="navbar d-none d-md-block p-4">
-            <ul>
-                <li><a href="dashboard.php">Dashboard</a></li>
-                <li><a href="topics.php">Topics</a></li>
-                <li><a href="settings.php" class="active">Settings</a></li>
+    <main id="main">
+        <aside class="navbar d-none d-md-block p-4" id="sidebar">
+            <ul id="navbar">
+                <li><a href="dashboard.php" class="navbar-collapsed">🏠</a></li>
+                <li><a href="topics.php" class="navbar-collapsed">🗂️</a></li>
+                <li><a href="quiz.php" class="navbar-collapsed">📝</a></li>
+                <li><a href="settings.php" class="active navbar-collapsed">⚙️</a></li>
+                <div id="hidden-collapse">
+                    <li><a href="dashboard.php">Dashboard</a></li>
+                    <li><a href="topics.php">Topics</a></li>
+                    <li><a href="quiz.php">Quiz</a></li>
+                    <li><a href="settings.php" class="active">Settings</a></li>
+                </div>
             </ul>
         </aside>
 
-        <section class="col d-block p-4">
-            <div class="header-top mb-4">
-                <div>
-                    <h1>Settings ⚙️</h1>
+        <section class="col d-block">
+            <header class="navbar bg-primary text-white p-4">
+                <div class="container-fluid">
+                    <div class="navbar-brand text-white g-2" style="scale: 1.6;">
+                        <button class="btn text-white navbar-btn mb-1 d-none d-md-inline-block" style="scale: 1.2;"
+                            type="button">☰</button>
+                        <a href="dashboard.php" class="text-white text-decoration-none"><img src="mania.png" alt="Logo"
+                                width="30" height="24" class="d-inline-block align-text-top">
+                            <strong>QuizMania</strong></a>
+                    </div>
                 </div>
-            </div>
+                <button class="btn text-white d-md-none" style="scale: 1.6;" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive">☰</button>
+            </header>
+            <section class="px-4 pt-2 mb-4">
+                <div class="header-top mb-4">
+                    <div>
+                        <h1>Settings ⚙️</h1>
+                    </div>
+                </div>
 
-            <!-- Stats Cards -->
+                <!-- Stats Cards -->
 
-            <div id="accordion">
-                <div class="card">
-                    <h5 class="mb-0">
-                        <button class="btn btn-white w-100 h-100" data-bs-toggle="collapse"
-                            data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                            Logout
-                        </button>
-                    </h5>
+                <div id="accordion">
+                    <div class="card">
+                        <h5 class="mb-0">
+                            <button class="btn btn-white w-100 h-100" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                Dark Mode
+                            </button>
+                        </h5>
 
-                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-bs-parent="#accordion">
-                        <div class="card-body">
-                            <div>
-                                <p>Are you sure you want to log out?</p>
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-bs-parent="#accordion">
+                            <div class="card-body">
+                                <div>
+                                    <div id="li-dark" class="dark-cont">Dark Mode <button id="toggle-dark"
+                                            class="dark-mode">
+                                            <p>◑</p>
+                                        </button></div>
+                                </div>
+
                             </div>
-                            <form method="post" action="logout.php" class="logout-bottom mt-4">
-                                <button type="submit" class="btn btn-danger w-50">Logout</button>
-                            </form>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h5 class="mb-0">
+                            <button class="btn btn-white w-100 h-100" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Logout
+                            </button>
+                        </h5>
+
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion">
+                            <div class="card-body">
+                                <div>
+                                    <p>Are you sure you want to log out?</p>
+                                </div>
+                                <form method="post" action="logout.php" class="logout-bottom mt-4">
+                                    <button type="submit" class="btn btn-danger w-50">Logout</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h5 class="mb-0">
+                            <button class="btn btn-white w-100 h-100" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Delete Account
+                            </button>
+                        </h5>
+
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#accordion">
+                            <div class="card-body">
+                                <div>
+                                    <p>Are you sure you want to delete your account?</p>
+                                </div>
+                                <form method="post" class="logout-bottom mt-4">
+                                    <input type="hidden" name="action" value="delete_acc">
+                                    <button type="submit" class="btn btn-danger w-50">Delete Account</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="card">
-                    <h5 class="mb-0">
-                        <button class="btn btn-white w-100 h-100" data-bs-toggle="collapse"
-                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Delete Account
-                        </button>
-                    </h5>
 
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion">
-                        <div class="card-body">
-                            <div>
-                                <p>Are you sure you want to delete your account?</p>
-                            </div>
-                            <form method="post" class="logout-bottom mt-4 justify-self-start">
-                                <input type="hidden" name="action" value="delete_acc">
-                                <button type="submit" class="btn btn-danger w-50">Delete Account</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            </section>
+            <footer class="bg bg-primary text-white text-center p-4">2025 All Rights Reserved</footer>
     </main>
-    <footer class="bg bg-primary text-white text-center p-4">2025 All Rights Reserved</footer>
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="navbar.js"></script>
+<script src="DarkMode.js"></script>
 
 </html>
 <div class="settings-menu">
