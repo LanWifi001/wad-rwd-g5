@@ -252,4 +252,8 @@ section {
     .container-fluid a {
         scale: 1;
     }
+
+    .card-topic {
+        font-size: small;
+    }
 }
