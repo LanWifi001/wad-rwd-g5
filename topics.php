@@ -303,9 +303,9 @@ foreach ($topics as $tname => $terms) {
                         <input type="hidden" name="action" value="start_quiz">
                         <div class="form-check row g-3">
                             <div class="container-fluid">
-                                <div class="row g-2">
+                                <div class="row g-1">
                                     <?php foreach ($subjects as $subject): ?>
-                                        <div class="col-md-6 col-sm-4 quiz">
+                                        <div class="col-6 col-sm-4 quiz">
                                             <!-- Card as label -->
                                             <label class="card h-100 card-hover" style="cursor:pointer;">
                                                 <img src="quiz.jpg" class="card-img-top col" alt="...">
@@ -313,10 +313,10 @@ foreach ($topics as $tname => $terms) {
                                                     <input class="col" style="scale: 0.8;" type="checkbox" name="quiz_topics[]"
                                                         value="<?= htmlspecialchars($subject['topic_name']) ?>">
                                                     <div class="col-10">
-                                                        <h5 class="card-title col">
+                                                        <h5 class="card-title col card-topic">
                                                             <?= htmlspecialchars($subject['topic_name']) ?>
                                                         </h5>
-                                                        <p class="card-text col">Start Quiz!</p>
+                                                        <p class="card-text col card-topic">Start Quiz!</p>
                                                     </div>
                                                 </div>
                                             </label>
