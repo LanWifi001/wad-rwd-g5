@@ -168,7 +168,9 @@ foreach ($topics as $tname => $terms) {
                 <div id="quizzes" class="mb-5">
                     <h2>Available Quizzes</h2>
                     <?php if (empty($subjects)): ?>
-                        <p class="text-muted">No topics to take a quiz yet.</p>
+                        <p class="text-muted">Add a topic first to take a quiz.
+                            <a href="topics.php" class="text-decoration-none">Click here.</a>
+                        </p>
                     <?php endif; ?>
                     <?php if (!empty($subjects)): ?>
 
@@ -230,11 +232,35 @@ foreach ($topics as $tname => $terms) {
                     <?php endif; ?>
                     <div id="direct-quiz"></div>
             </section>
-            <footer class="bg bg-primary text-white text-center p-4">2025 All Rights Reserved</footer>
+            <footer class="bg bg-primary text-white text-center p-4">
+                <div class="top-footer">
+                    <div class="footer-body">
+                        <strong><b>|</b> QuizMania</strong><br><br>
+                        <p>Organize your study sessions and stay smart with your studies.</p>
+                    </div>
+                    <div class="footer-body">
+                        <strong><b>|</b> About our Website</strong><br><br>
+                        <p>QuizMania is a simple and user-friendly web application built to help students review more
+                            effectively. It lets users store, manage, and study topic-based definitions and terms, while
+                            also offering features like quizzes, dark mode, and user account management.</p>
+                    </div>
+                    <div class="footer-body">
+                        <strong><b>|</b> Contact</strong><br><br>
+                        <p>La Verdad Christian College
+                            <br>Apalit, Pampanga, 2016
+                        </p>
+                        <p>Phone: 09656337780</p>
+                    </div>
+                </div>
+                <span></span>
+
+                <div class="bottom-footer">&#169; 2025 All Rights Reserved</div>
+            </footer>
         </section>
     </main>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="navbar.js"></script>
 <script src="DarkMode.js"></script>
+
 </html>

@@ -301,8 +301,28 @@ foreach ($topics as $tname => $terms) {
 
             </section>
             <footer class="bg bg-primary text-white text-center p-4">
+                <div class="top-footer">
+                    <div class="footer-body">
+                        <strong><b>|</b> QuizMania</strong><br><br>
+                        <p>Organize your study sessions and stay smart with your studies.</p>
+                    </div>
+                    <div class="footer-body">
+                        <strong><b>|</b> About our Website</strong><br><br>
+                        <p>QuizMania is a simple and user-friendly web application built to help students review more
+                            effectively. It lets users store, manage, and study topic-based definitions and terms, while
+                            also offering features like quizzes, dark mode, and user account management.</p>
+                    </div>
+                    <div class="footer-body">
+                        <strong><b>|</b> Contact</strong><br><br>
+                        <p>La Verdad Christian College
+                            <br>Apalit, Pampanga, 2016
+                        </p>
+                        <p>Phone: 09656337780</p>
+                    </div>
+                </div>
+                <span></span>
 
-                <div class="bottom-footer">2025 All Rights Reserved</div>
+                <div class="bottom-footer">&#169; 2025 All Rights Reserved</div>
             </footer>
         </section>
     </main>
@@ -310,4 +330,5 @@ foreach ($topics as $tname => $terms) {
 <script src="navbar.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="DarkMode.js"></script>
+
 </html>

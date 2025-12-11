@@ -72,7 +72,19 @@ header {
     /* background-attachment: fixed; */
 }
 
+footer span {
+    display: block;
+    height: 1px;
+    width: 100%;
+    margin-inline: 0;
+    margin-bottom: 2px;
+    background-color: var(--bg-body);
+}
+
 footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: var(--bg-footer);
     /* background-image: url("study.jpg"); */
     background-repeat: no-repeat;
@@ -80,7 +92,32 @@ footer {
     background-size: cover;
     /* background-attachment: fixed; */
     font-size: large;
-    height: 100px;
+    min-height: 310px;
+    max-height: 1000px;
+    /* padding: 2rem; */
+    margin: 0;
+}
+
+.top-footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    gap: 1rem;
+    text-align: left;
+    border-bottom: var(--bg-body);
+}
+
+.footer-body {
+    justify-self: center;
+}
+
+.bottom-footer {
+    margin-top: 1rem;
+}
+
+.bottom-footer p {
+    font-size: 0.95rem;
+    line-height: 1.5;
 }
 
 aside h2 {
@@ -316,6 +353,10 @@ section {
     display: none;
 }
 
+.navbar-brand a img {
+    background-color: #f0f2f7;
+}
+
 .toggle-collapsed {
     display: inline-block;
 }
@@ -363,6 +404,17 @@ section {
 
     #sidebar.toggle-aside {
         width: 250px;
+    }
+
+    .top-footer {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        justify-content: start;
+    }
+
+    .footer-body {
+        justify-self: left;
     }
 }
 
