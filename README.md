@@ -1,6 +1,6 @@
 # 🌟 **QuizMania**
 
-**QuizMania** is a simple and user-friendly web application built to help students review more effectively. It lets users store, manage, and study topic-based definitions and terms, while also offering features like **quizzes**, **dark mode**, and **user account management**.
+**QuizMania** is a simple and user-friendly web application built to help students review more effectively. It lets users store, manage, and study topic-based definitions and terms while offering features like quizzes, dark mode, and user account management.
 
 ---
 
@@ -12,99 +12,109 @@
 
 ### 📊 **Dashboard Overview**
 
-* Displays **study streak**, **total subjects**, **total terms**, and **overall progress**.
+* Shows **study streak**, **total subjects**, **total terms**, and **overall progress**.
 * Allows users to **delete topics directly**.
 
 ### 📝 **Quiz System**
 
-* Users can take quizzes based on selected topics.
-* Questions are generated from stored terms and definitions.
+* Take quizzes based on selected topics.
+* Questions pull from stored terms and definitions.
 * Scores help track learning progress.
 
 ### 🌙 **Dark Mode**
 
-* Toggle between **Light Mode** and **Dark Mode** for comfortable studying.
+* Switch between **Light Mode** and **Dark Mode**.
 
 ### 🗂️ **Topic Management**
 
-* View all topics
-* Add new topics
-* Edit and manage reviewer content
+* View topics
+* Add topics
+* Manage reviewer content
 
 ### 🚪 **Log Out**
 
-* Secure logout to protect user data.
+* Secure logout for user privacy.
 
 ### ❌ **Delete Account**
 
-* Users can permanently delete their account and all associated data.
+* Permanently delete your account and all stored data.
 
 ---
 
 ## 🛠️ **Technologies Used**
 
 * **HTML** – Structure
-* **CSS** – Layout & design
-* **Bootstrap** – Responsive UI components
-* **JavaScript** – Dynamic functionality
+* **CSS** – Styling
+* **Bootstrap** – Responsive design
+* **JavaScript** – Interactivity
 * **PHP** – Backend logic
-* **MySQL / MariaDB** – Database for users, topics, and terms
+* **SQLite** – Local database (no manual setup required)
 
 ---
 
-## 📘 **How to Use QuizMania**
+# 🖥️ **Running the Project Locally (SQLite + localhost:7000)**
 
-### **1️⃣ Open the Website**
+QuizMania uses **SQLite**, so you **don’t need to configure MySQL or import any SQL files**.
+The app will automatically create and manage the database file.
 
-Access QuizMania using any modern browser.
+### **1️⃣ Clone the Repository**
 
-### **2️⃣ Log In or Create an Account**
+```bash
+git clone https://github.com/your-username/quizmania.git
+```
 
-* Enter your **email** and **password** if you already have an account.
-* If you're new, click **Sign Up** and fill out the form.
+Or download the ZIP and extract it.
 
-### **3️⃣ Navigate the Dashboard**
+---
 
-Here you can:
+### **2️⃣ Go to the Project Directory**
 
-* View your **study streak**
-* See **total subjects** and **total terms**
-* Check your **progress**
-* **Delete topics** when needed
+```bash
+cd quizmania
+```
 
-### **4️⃣ Manage Your Topics**
+---
 
-* Open the **Topics** tab
-* View all topics
-* Click **Add Topic** to create new reviewer content
+### **3️⃣ Start the Local Development Server**
 
-### **5️⃣ Take a Quiz**
+Use PHP’s built-in server:
 
-* Go to the **Quiz** or **Start Quiz** section
-* Select your topics
-* Answer the questions and review your results
+```bash
+php -S localhost:7000
+```
 
-### **6️⃣ Switch Themes**
+This launches the app at:
 
-* Use the **Dark Mode toggle** to switch between light and dark theme.
+```
+http://localhost:7000
+```
 
-### **7️⃣ Delete Your Account (Optional)**
+---
 
-* Go to **Account Settings**
-* Select **Delete Account**
-* Confirm your choice to permanently remove your data
+### **4️⃣ Start Using QuizMania**
 
-### **8️⃣ Log Out Safely**
+Since the project uses SQLite:
 
-Click **Logout** to end your session securely.
+✔ No database installation
+✔ No imports
+✔ No credentials needed
+
+You can immediately:
+
+* Create an account
+* Add topics & terms
+* Take quizzes
+* Switch dark mode
+* Delete account
+* Manage everything seamlessly
 
 ---
 
 ## 👥 **Members and Roles**
 
-| **Member**                 | **Role**                                          |
-| -------------------------- | ------------------------------------------------- |
-| **Bronola, Leander Dylan** | **Project Manager / Full-stack Support**          |
-| **Villar, Nard**           | **Backend Developer – Authentication & Security** |
-| **Huevos, Luis Narciso**   | **Backend Developer – CRUD & Database**           |
-| **Forteza, Marclean L.**   | **Frontend Developer – UI/UX & Responsiveness**   |
+| **Member**                 | **Role**                                      |
+| -------------------------- | --------------------------------------------- |
+| **Bronola, Leander Dylan** | Project Manager / Full-stack Support          |
+| **Villar, Nard**           | Backend Developer – Authentication & Security |
+| **Huevos, Luis Narciso**   | Backend Developer – CRUD & Database (SQLite)  |
+| **Forteza, Marclean L.**   | Frontend Developer – UI/UX & Responsiveness   |
