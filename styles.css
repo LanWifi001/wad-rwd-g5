@@ -483,3 +483,7 @@ section {
 .collapse .card-body .logout-bottom {
     justify-self: center;
 }
+
+header:hover, footer:hover {
+    background-color: var(--bg-header);
+}

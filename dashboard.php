@@ -132,7 +132,7 @@ foreach ($topics as $tname => $terms) {
         </aside>
 
         <section class="col d-block">
-            <header class="navbar bg-primary text-white p-4">
+            <header class="navbar text-white p-4">
                 <div class="container-fluid">
                     <div class="navbar-brand text-white g-2" style="scale: 1.6;">
                         <button class="btn text-white navbar-btn mb-1 d-none d-md-inline-block" style="scale: 1.2;"
@@ -300,7 +300,7 @@ foreach ($topics as $tname => $terms) {
                 <?php endif; ?>
 
             </section>
-            <footer class="bg bg-primary text-white text-center p-4">
+            <footer class="bg text-white text-center p-4">
                 <div class="top-footer">
                     <div class="footer-body">
                         <strong><b>|</b> QuizMania</strong><br><br>
