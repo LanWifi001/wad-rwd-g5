@@ -1,83 +1,84 @@
-QuizMania
+# **QuizMania**
 
 QuizMania is a simple and user-friendly web application that serves as a digital reviewer for students. It allows users to store, manage, and study topic-based definitions and terms. With features like account creation, topic management, and progress tracking, reviewing becomes more organized and accessible.
 
-Features
-User Features
-🔐 User Authentication
+---
 
-Log in with an existing account or register a new one.
+## **Features**
 
-📊 Dashboard Overview
+### **User Features**
 
-View study streak, total subjects, total terms, and overall progress.
+#### **🔐 User Authentication**
 
-Delete topics directly from the dashboard.
+* Log in with an existing account or register a new one.
 
-🗂️ Topic Management
+#### **📊 Dashboard Overview**
 
-View all topics, add new ones, and manage reviewer content easily.
+* View study streak, total subjects, total terms, and overall progress.
+* Delete topics directly from the dashboard.
 
-🚪 Logout Function
+#### **🗂️ Topic Management**
 
-Secure logout system to protect user privacy.
+* View all topics, add new ones, and manage reviewer content easily.
 
-Technologies Used
+#### **🚪 Logout Function**
 
-HTML – Page structure
+* Secure logout system to protect user privacy.
 
-CSS – Styling and layout
+---
 
-Bootstrap – Responsive design & UI components
+## **Technologies Used**
 
-JavaScript – Interactivity & dynamic functions
+* **HTML** – Page structure
+* **CSS** – Styling and layout
+* **Bootstrap** – Responsive design & UI components
+* **JavaScript** – Interactivity & dynamic functions
+* **PHP** – Server-side logic & backend processing
+* **MySQL / MariaDB** – Handles user accounts, topics, and terms storage
 
-PHP – Server-side logic & backend processing
+---
 
-MySQL / MariaDB – Handles user accounts, topics, and terms storage
+## **How to Use QuizMania**
 
-How to Use QuizMania
-1. Open the Website
+### **1. Open the Website**
 
 Access QuizMania using any modern web browser.
 
-2. Log In or Create an Account
+### **2. Log In or Create an Account**
 
-If you already have an account, enter your email and password.
+* If you already have an account, enter your email and password.
+* Otherwise, click **Sign Up** and complete the registration form.
 
-Otherwise, click Sign Up and complete the registration form.
-
-3. Navigate to the Dashboard
+### **3. Navigate to the Dashboard**
 
 After logging in, you can:
 
-Check your study streak
+* Check your study streak
+* View total subjects and total terms
+* Track your progress
+* Delete topics when necessary
 
-View total subjects and total terms
+### **4. Browse or Add Topics**
 
-Track your progress
+* Click the **Topics** tab
+* View your existing topics
+* Click **Add Topic** to create new reviewer content (definitions or terms)
 
-Delete topics when necessary
-
-4. Browse or Add Topics
-
-Click the Topics tab
-
-View your existing topics
-
-Click Add Topic to create new reviewer content (definitions or terms)
-
-5. Review Topics
+### **5. Review Topics**
 
 Open any topic and study at your own pace.
 
-6. Logout
+### **6. Logout**
 
-Click Logout to secure your account once you’re done.
+Click **Logout** to secure your account once you’re done.
 
-Members and Roles
-Member	Role
-Bronola, Leander Dylan	Project Manager / Full-stack Support
-Villar, Nard	Backend Developer – Authentication & Security
-Huevos, Luis Narciso	Backend Developer – CRUD & Database
-Forteza, Marclean L.	Frontend Developer – UI/UX & Responsiveness
+---
+
+## **Members and Roles**
+
+| **Member**                 | **Role**                                      |
+| -------------------------- | --------------------------------------------- |
+| **Bronola, Leander Dylan** | Project Manager / Full-stack Support          |
+| **Villar, Nard**           | Backend Developer – Authentication & Security |
+| **Huevos, Luis Narciso**   | Backend Developer – CRUD & Database           |
+| **Forteza, Marclean L.**   | Frontend Developer – UI/UX & Responsiveness   |
