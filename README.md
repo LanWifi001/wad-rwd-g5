@@ -1,84 +1,110 @@
-# **QuizMania**
+# 🌟 **QuizMania**
 
-QuizMania is a simple and user-friendly web application that serves as a digital reviewer for students. It allows users to store, manage, and study topic-based definitions and terms. With features like account creation, topic management, and progress tracking, reviewing becomes more organized and accessible.
+**QuizMania** is a simple and user-friendly web application built to help students review more effectively. It lets users store, manage, and study topic-based definitions and terms, while also offering features like **quizzes**, **dark mode**, and **user account management**.
 
 ---
 
-## **Features**
+## 🚀 **Features**
 
-### **User Features**
-
-#### **🔐 User Authentication**
+### 🔐 **User Authentication**
 
 * Log in with an existing account or register a new one.
 
-#### **📊 Dashboard Overview**
+### 📊 **Dashboard Overview**
 
-* View study streak, total subjects, total terms, and overall progress.
-* Delete topics directly from the dashboard.
+* Displays **study streak**, **total subjects**, **total terms**, and **overall progress**.
+* Allows users to **delete topics directly**.
 
-#### **🗂️ Topic Management**
+### 📝 **Quiz System**
 
-* View all topics, add new ones, and manage reviewer content easily.
+* Users can take quizzes based on selected topics.
+* Questions are generated from stored terms and definitions.
+* Scores help track learning progress.
 
-#### **🚪 Logout Function**
+### 🌙 **Dark Mode**
 
-* Secure logout system to protect user privacy.
+* Toggle between **Light Mode** and **Dark Mode** for comfortable studying.
 
----
+### 🗂️ **Topic Management**
 
-## **Technologies Used**
+* View all topics
+* Add new topics
+* Edit and manage reviewer content
 
-* **HTML** – Page structure
-* **CSS** – Styling and layout
-* **Bootstrap** – Responsive design & UI components
-* **JavaScript** – Interactivity & dynamic functions
-* **PHP** – Server-side logic & backend processing
-* **MySQL / MariaDB** – Handles user accounts, topics, and terms storage
+### 🚪 **Log Out**
 
----
+* Secure logout to protect user data.
 
-## **How to Use QuizMania**
+### ❌ **Delete Account**
 
-### **1. Open the Website**
-
-Access QuizMania using any modern web browser.
-
-### **2. Log In or Create an Account**
-
-* If you already have an account, enter your email and password.
-* Otherwise, click **Sign Up** and complete the registration form.
-
-### **3. Navigate to the Dashboard**
-
-After logging in, you can:
-
-* Check your study streak
-* View total subjects and total terms
-* Track your progress
-* Delete topics when necessary
-
-### **4. Browse or Add Topics**
-
-* Click the **Topics** tab
-* View your existing topics
-* Click **Add Topic** to create new reviewer content (definitions or terms)
-
-### **5. Review Topics**
-
-Open any topic and study at your own pace.
-
-### **6. Logout**
-
-Click **Logout** to secure your account once you’re done.
+* Users can permanently delete their account and all associated data.
 
 ---
 
-## **Members and Roles**
+## 🛠️ **Technologies Used**
 
-| **Member**                 | **Role**                                      |
-| -------------------------- | --------------------------------------------- |
-| **Bronola, Leander Dylan** | Project Manager / Full-stack Support          |
-| **Villar, Nard**           | Backend Developer – Authentication & Security |
-| **Huevos, Luis Narciso**   | Backend Developer – CRUD & Database           |
-| **Forteza, Marclean L.**   | Frontend Developer – UI/UX & Responsiveness   |
+* **HTML** – Structure
+* **CSS** – Layout & design
+* **Bootstrap** – Responsive UI components
+* **JavaScript** – Dynamic functionality
+* **PHP** – Backend logic
+* **MySQL / MariaDB** – Database for users, topics, and terms
+
+---
+
+## 📘 **How to Use QuizMania**
+
+### **1️⃣ Open the Website**
+
+Access QuizMania using any modern browser.
+
+### **2️⃣ Log In or Create an Account**
+
+* Enter your **email** and **password** if you already have an account.
+* If you're new, click **Sign Up** and fill out the form.
+
+### **3️⃣ Navigate the Dashboard**
+
+Here you can:
+
+* View your **study streak**
+* See **total subjects** and **total terms**
+* Check your **progress**
+* **Delete topics** when needed
+
+### **4️⃣ Manage Your Topics**
+
+* Open the **Topics** tab
+* View all topics
+* Click **Add Topic** to create new reviewer content
+
+### **5️⃣ Take a Quiz**
+
+* Go to the **Quiz** or **Start Quiz** section
+* Select your topics
+* Answer the questions and review your results
+
+### **6️⃣ Switch Themes**
+
+* Use the **Dark Mode toggle** to switch between light and dark theme.
+
+### **7️⃣ Delete Your Account (Optional)**
+
+* Go to **Account Settings**
+* Select **Delete Account**
+* Confirm your choice to permanently remove your data
+
+### **8️⃣ Log Out Safely**
+
+Click **Logout** to end your session securely.
+
+---
+
+## 👥 **Members and Roles**
+
+| **Member**                 | **Role**                                          |
+| -------------------------- | ------------------------------------------------- |
+| **Bronola, Leander Dylan** | **Project Manager / Full-stack Support**          |
+| **Villar, Nard**           | **Backend Developer – Authentication & Security** |
+| **Huevos, Luis Narciso**   | **Backend Developer – CRUD & Database**           |
+| **Forteza, Marclean L.**   | **Frontend Developer – UI/UX & Responsiveness**   |
